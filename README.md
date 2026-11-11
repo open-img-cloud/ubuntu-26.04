@@ -25,7 +25,7 @@ Ubuntu 26.04 LTS is the current LTS release, with standard support until **April
 
 ## Image
 
-- File: `ubuntu-26.04-<version>-x86_64.qcow2`, where `<version>` is
+- File: `ubuntu-<version>-x86_64.qcow2`, where `<version>` is
   `<release>-<upstream serial>` (e.g. `26.04-20261016`).
 - Default user: `ubuntu` (SSH key from cloud-init, passwordless sudo).
 - The root filesystem grows to the flavor disk on first boot.
@@ -34,12 +34,12 @@ Ubuntu 26.04 LTS is the current LTS release, with standard support until **April
 
 ```sh
 V=26.04-20261016
-curl -fLO https://images.openimages.cloud/ubuntu-26.04/$V/ubuntu-26.04-$V-x86_64.qcow2
+curl -fLO https://images.openimages.cloud/ubuntu-26.04/$V/ubuntu-$V-x86_64.qcow2
 
 openstack image create \
     --disk-format qcow2 --container-format bare \
     --property hw_qemu_guest_agent=yes \
-    --file ubuntu-26.04-$V-x86_64.qcow2 \
+    --file ubuntu-$V-x86_64.qcow2 \
     'Ubuntu 26.04 LTS '$V
 ```
 

@@ -50,7 +50,7 @@ jobs:
     with:
       os_name: ubuntu-26.04
       version: ${{ needs.resolve-version.outputs.version }}
-      output_filename: 'ubuntu-26.04-{version}-x86_64.qcow2'
+      output_filename: 'ubuntu-{version}-x86_64.qcow2'
       upstream_url: 'https://cloud-images.ubuntu.com/releases/resolute/release-{version_suffix}/ubuntu-26.04-server-cloudimg-amd64.img'
       upstream_checksum_url: 'https://cloud-images.ubuntu.com/releases/resolute/release-{version_suffix}/SHA256SUMS'
       decompress: none
